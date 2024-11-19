@@ -1,0 +1,74 @@
+
+
+import os
+
+def generate_config():
+    config = "[config]\n\n"
+
+    # Graphics settings
+    config += "[Graphics]\n"
+    config += "Resolution=1080x2340\n"
+    config += "FrameRate=60\n"
+    config += "TextureQuality=High\n"
+    config += "ShadowQuality=Medium\n"
+    config += "AntiAliasing=2\n"
+    config += "GraphicsSync=0\n\n"
+
+    # Aim assistance settings
+    config += "[Aim Assistance]\n"
+    config += "AimSmoothing=0\n"
+    config += "AimAcceleration=0\n"
+    config += "AimAssist=0\n"
+    config += "AimFOV=90\n"
+    config += "AimSpeed=100\n"
+    config += "AimAcceleration=0\n\n"
+
+    # Sensitivity settings
+    config += "[Sensitivity]\n"
+    config += "Sensitivity=100\n"
+    config += "CameraSensitivity=100\n"
+    config += "ControllerSensitivity=50\n\n"
+
+    # Advanced settings
+    config += "[Advanced]\n"
+    config += "MotionBlur=0\n"
+    config += "Bloom=0\n"
+    config += "LensFlares=0\n"
+    config += "SunShafts=0\n"
+    config += "DepthOfField=0\n\n"
+
+    # Accuracy settings
+    config += "[Accuracy]\n"
+    config += "HeadshotDamageMultiplier=1.5\n"
+    config += "HeadshotAccuracy=100\n"
+    config += "AimAssistHeadshot=0\n"
+    config += "RecoilReduction=50\n\n"
+
+    config += "[/config]"
+
+    return config
+
+def save_config(config, filename):
+    with open(filename, 'w') as f:
+        f.write(config)
+
+def main():
+    username = input("Enter your Windows username: ")
+    filename = f"C:\\Users\\{username}\\AppData\\Local\\com.dts.freefireth\\SharedConfig\\config.txt"
+    config = generate_config()
+    save_config(config, filename)
+    print(f"Config file saved to {filename}")
+
+if __name__ == "__main__":
+    main()
+```
+
+*Config File Settings:*
+
+- `AimSmoothing=0`: Disables aim smoothing for better accuracy.
+- `AimAcceleration=0`: Disables aim acceleration for better control.
+- `AimFOV=90`: Sets aim FOV to 90 for better visibility.
+- `AimSpeed=100`: Sets aim speed to 100 for faster aiming.
+- `HeadshotDamageMultiplier=1.5`: Increases headshot damage by 50%.
+- `HeadshotAccuracy=100`: Sets headshot accuracy to 100%.
+- `RecoilReduction=50`: Reduces recoil by 50%
